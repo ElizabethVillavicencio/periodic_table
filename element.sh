@@ -3,12 +3,12 @@
 # Database connection command
 DB="psql --username=freecodecamp --dbname=periodic_table -t --no-align -c"
 
-# Check if an argument is provided
+# Check if an argument is provided; if not, display an error message and exit.
 if [ -z "$1" ]; then
   echo "Please provide an element as an argument."
   exit 0
 fi
-
+# Connect to the periodic_table database and fetch element details.
 # Query the database
 if [[ $1 =~ ^[0-9]+$ ]]; then
   # If the argument is a number, treat it as an atomic number
